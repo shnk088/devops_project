@@ -1,0 +1,15 @@
+# python cache
+_pycache_ /
+*.pyc
+ # virtual environment
+ venv/
+ .environment/
+ #logs
+ *.logs
+
+ #os generated files
+ .DS_store
+ Thumbs.db
+
+ #vs code setting 
+ .vscode/
