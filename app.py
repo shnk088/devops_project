@@ -8,7 +8,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/plain; charset=utf-8")
         self.end_headers()
-        self.wfile.write(b"Hello DevOps! This is my first project.\n")
+        self.wfile.write(b"hii worlddo .\n")
 
 if __name__ == "__main__":
     print(f"Starting server on port {PORT}")
