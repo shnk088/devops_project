@@ -27,3 +27,17 @@ docker ps - to show container
 - docker login -- docker hub m login 
 #  Dockerfile is edited, not recreated; keep a single Dockerfile per project.
 
+==========================================================================
+yml file 
+#skeleton
+=============
+version: "3.8"
+
+services:
+ web:
+  image: devops-app
+  ports:
+   - "8080:8080"
+
+ docker-compose up - to build 
+ docker-compose down - to removed 

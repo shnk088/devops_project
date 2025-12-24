@@ -8,3 +8,4 @@ FROM python:3.10-slim
  ENV PORT=8080
  EXPOSE 8080
  CMD ["python","app.py"]
+
