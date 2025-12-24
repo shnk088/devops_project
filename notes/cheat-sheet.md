@@ -68,4 +68,5 @@ env
 environment: docker-compose me variables define karne ke liya hota h
 docker exec -it devops-web env -- extra verify 
 env file mai port change kiya + docker-compose restart = behaviour change without code modification.
-- 
+env_file: variable container k andar jate h 
+${port}:${port} - variable compose time pe susbstitute hota h
