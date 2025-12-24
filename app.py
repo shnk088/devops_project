@@ -14,3 +14,4 @@ if __name__ == "__main__":
     print(f"Starting server on port {PORT}")
     server = HTTPServer(("", PORT), Handler)
     server.serve_forever()
+exit(1)

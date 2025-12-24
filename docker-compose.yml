@@ -5,5 +5,7 @@ services:
   image: devops-app
   container_name: devops-web
   ports:
-   - "8080:8080"
+   - "${PORT}:${PORT}"
+  env_file:
+   - .env
   restart: always
