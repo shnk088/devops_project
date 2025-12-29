@@ -5,9 +5,6 @@ services:
  web:
   image: devops-app
   container_name: devops-web
-  db:
-  - mysql
-
   ports:
    - "${PORT}:${PORT}"
   env_file:
