@@ -1,1 +1,2 @@
-# Python dependencies (none for now)
+flask
+mysql-connector-python

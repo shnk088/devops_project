@@ -1,17 +1,21 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from flask import Flask
+import mysql.connector
 import os
 
-PORT = int(os.environ.get("PORT", 8080))
+app = Flask(__name__)
 
-class Handler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/plain; charset=utf-8")
-        self.end_headers()
-        self.wfile.write(b"hii worlddo .\n")
+@app.route("/")
+def home():
+    try:
+        db = mysql.connector.connect(
+            host="db",
+            user=os.getenv("MYSQL_USER"),
+            password=os.getenv("MYSQL_PASSWORD"),
+            database=os.getenv("MYSQL_DATABASE")
+        )
+        return "Flask + MySQL connected successfully 🚀"
+    except Exception as e:
+        return f"Database connection failed ❌ : {e}"
 
 if __name__ == "__main__":
-    print(f"Starting server on port {PORT}")
-    server = HTTPServer(("", PORT), Handler)
-    server.serve_forever()
-exit(1)
+    app.run(host="0.0.0.0", port=5000)
